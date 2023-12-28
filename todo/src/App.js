@@ -42,11 +42,11 @@ function App() {
           </div>
         </div>)
         })}
-
-        {toDos.map((obj)=>{
-          if(obj.status){
-            console.log(toDos)
-            return (<h3>{obj.text}</h3>)
+        <br/>
+        <h1> Completed Task</h1>
+        {toDos.map((ob)=>{
+          if(ob.status){
+            return (<h2>{ob.text}</h2>)
           }
           return null
         })}
@@ -56,3 +56,6 @@ function App() {
 }
 
 export default App;
+
+
+
