@@ -4,7 +4,22 @@ import { useState } from 'react';
 
 function App() {
   const[toDos,settoDos]=useState([])
+
   const[toDo,settoDo]=useState('')
+
+  const setArray =()=>{
+    const existsTodo =toDos.find(toDos=>toDos.text===toDo)
+    if (existsTodo){
+      alert('Already exist');
+    }else{
+      settoDos([...toDos,{id:Date.now(),text:toDo,default:false}])
+    }
+  }
+
+  const removeElement=(id)=>{
+    settoDos(toDos.filter(toDo=>toDo.id!==id))
+  }
+
   return (
     <div className="app">
       <div className="mainHeading">
@@ -14,9 +29,10 @@ function App() {
         <br />
         <h2>Whoop, it's Monday 🌝 ☕ </h2>
       </div>
+
       <div className="input">
         <input value={toDo} onChange={(e)=>settoDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
-        <i onClick={()=>settoDos([...toDos,{id:Date.now(),text:toDo,status:false}])} className="fas fa-plus"></i>
+        <i onClick={setArray} className="fas fa-plus"></i>
       </div>
 
       <div className="todos">
@@ -38,7 +54,7 @@ function App() {
             <p>{obj.text}</p>
           </div>
           <div className="right">
-            <i className="fas fa-times"></i>
+            <i className="fas fa-times" onClick={()=>removeElement(obj.id)}></i>
           </div>
         </div>)
         })}
@@ -59,4 +75,3 @@ export default App;
 
 
 
-check
