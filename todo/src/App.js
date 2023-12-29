@@ -75,3 +75,20 @@ export default App;
 
 
 
+//////////////////////////////////////////    CONCEPT FOR UPDATE TODO    //////////////////////////////////////////////
+
+
+// const updateElement = (id, updatedData) => {
+//   // 1. Access the item to be updated:
+//   const updatedTodos = toDos.map(toDo => {
+//     if (toDo.id === id) {
+//       // 2. Update the item's properties:
+//       return { ...toDo, ...updatedData }; // Combine existing and updated properties
+//     } else {
+//       return toDo; // Keep unchanged items
+//     }
+//   });
+
+//   // 3. Update the state or data source:
+//   setTodos(updatedTodos);
+// };
